@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 package controlador;
 
 import java.io.IOException;
@@ -37,15 +34,25 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
         perros = pag.listar();
+        if (perros.isEmpty()) {
+            System.out.println("La lista de perros está vacía.");
+        } else {
+            System.out.println("La lista de perros tiene " + perros.size() + " elementos.");
+        }
         switch (accion) {
-            case "ejemplo":
+            case "home":
 
                 break;
             default:
                 request.setAttribute("perros", perros);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
         }
+
+
+
     }
+
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

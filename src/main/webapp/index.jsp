@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Formulario para recopilar datos</title>
@@ -18,14 +19,14 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <label>${p.getCtp_id()}</label>
+                        <label>${p.getCtp_id}</label>
                     </div>
                     <div class="card-body">
                         <i>${p.getPer_cum}</i>
                         <img src="ControladorIMG?id=${p.getPer_id}" alt="imagen de perro aki" width="200"height="180">
                     </div>
                     <div class="card-footer">
-                        <label>${p.getPer_nom()}</label>
+                        <label>${p.getPer_nom}</label>
                         <div class="botones">
                             <a href="">Conocelo</a>
                         </div>

@@ -11,7 +11,8 @@ public class Conexion {
     String pass = "root";
     public Connection getConnection() throws SQLException {
         try{
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
             con = DriverManager.getConnection(url, user,pass);
             System.out.println("conectadisimo");
         } catch (ClassNotFoundException e) {
