@@ -23,6 +23,14 @@ import java.sql.Date;
         String per_nom,per_des;
         InputStream per_fot;
 
+        int perro_id;
+        String perro_nombre;
+        int catraza_id;
+        int  catatipo_perro;
+        date perro_cumplea;
+
+
+
         /**
          *
          * @param per_id int

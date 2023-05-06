@@ -10,7 +10,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
@@ -36,7 +38,7 @@ public class PerrAg {
                 p.setPer_id(rs.getInt(1));
                 p.setPer_nom(rs.getString(2));
                 p.setCra_id(rs.getInt(3));
-                p.setPer_cum(rs.getDate(4));
+                p.setPer_cum(Date.valueOf(rs.getObject(4, LocalDate.class)));
                 p.setPer_fot(rs.getBinaryStream(5));
                 p.setRef_id(rs.getInt(6));
                 p.setPer_des(rs.getString(7));
@@ -47,7 +49,7 @@ public class PerrAg {
             }
 
         }catch (SQLException e){
-            System.out.println("erro al ejecutar la consulta: " + e.getMessage());
+            System.out.println("error al ejecutar la consulta(perAG): " + e.getMessage());
         }
         return perros;
     }
