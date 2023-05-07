@@ -35,15 +35,16 @@ public class PerrAg {
             rs = ps.executeQuery();
             while(rs.next()){
                 Perro p = new Perro();
-                p.setPer_id(rs.getInt(1));
-                p.setPer_nom(rs.getString(2));
-                p.setCra_id(rs.getInt(3));
-                p.setPer_cum(Date.valueOf(rs.getObject(4, LocalDate.class)));
-                p.setPer_fot(rs.getBinaryStream(5));
-                p.setRef_id(rs.getInt(6));
-                p.setPer_des(rs.getString(7));
-                p.setExp_id(rs.getInt(8));
-                p.setOrp_id(rs.getInt(9));
+                p.setPerro_id(rs.getInt(1));
+                p.setPerro_nombre(rs.getString(2));
+                p.setCatatipo_perro(rs.getInt(3));
+                p.setCatatipo_perro(rs.getInt(4));
+                p.setPerro_cumplea(rs.getDate(5));
+                p.setRefug_id(rs.getInt(6));
+                p.setPerro_IMG(rs.getBinaryStream(7));
+                p.setOrigeperro_id(rs.getInt(8));
+                p.setPerro_descripc(rs.getString(9));
+
                 perros.add(p);
                 System.out.println("perro encontrado: " + perros.toString());
             }
@@ -55,8 +56,8 @@ public class PerrAg {
     }
 
 
-    public void agregarImg(int per_id, HttpServletResponse response) {
-        String sql = "select *from perro where per_id ="+ per_id;
+    public void agregarImg(int Perro_id, HttpServletResponse response) {
+        String sql = "select *from perro where per_id ="+ Perro_id;
         InputStream inputStream = null;
         OutputStream outputstream = null;
         BufferedInputStream bufferedInputStream = null;
