@@ -34,14 +34,18 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
         perros = pag.listar();
-        if (perros.isEmpty()) {
-            System.out.println("La lista de perros está vacía.");
-        } else {
-            System.out.println("La lista de perros tiene " + perros.size() + " elementos.");
-        }
+
+           if (perros.isEmpty()) {
+                      System.out.println("La lista de perros está vacía.");
+                  } else {
+                      System.out.println("La lista de perros tiene " + perros.size() + " elementos.");
+                  }
+
+
         switch (accion) {
             case "home":
-
+                request.setAttribute("perros", perros);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
             default:
                 request.setAttribute("perros", perros);

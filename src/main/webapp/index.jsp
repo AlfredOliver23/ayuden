@@ -55,14 +55,14 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <label>${p.Catatipo_perro}</label>
+                        <label>${p.catatipo_perro}</label>
                     </div>
                     <div class="card-body">
-                        <i>${p.Perro_cumplea}</i>
-                        <img src="ControladorIMG?id=${p.Perro_id}" alt="imagen de perro aki" width="200" height="180">
+                        <i>${p.perro_cumplea}</i>
+                        <img src="ControladorIMG?id=${p.perro_id}" alt="imagen de perro aki" width="200" height="180">
                     </div>
                     <div class="card-footer">
-                        <label>${p.Perro_nombre}</label>
+                        <label>${p.perro_nombre}</label>
                         <div class="botones">
                             <a href="">Conocelo</a>
                         </div>
