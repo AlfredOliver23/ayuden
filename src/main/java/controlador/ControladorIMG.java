@@ -57,8 +57,10 @@ public class ControladorIMG extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("perro_id"));
         pag.agregarImg(id, response);
+        System.out.println("URL de la imagen: " + request.getContextPath() + "/ControladorIMG?id=" + id);
+
 
     }
 

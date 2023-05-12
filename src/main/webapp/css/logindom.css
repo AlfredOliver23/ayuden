@@ -1,0 +1,7 @@
+footer{
+    padding: 1rem;
+    position: fixed;
+    background-color: black;
+    color: white;
+    font-family: Helvetica,Arial,sans-serif;
+}
